@@ -44,7 +44,7 @@ local function obfuscate_line(buf, line_idx, new_line, old_line)
 	for col, rand_char in pairs(cached_line) do
 		if col <= #new_line then
 			vim.api.nvim_buf_set_extmark(buf, ns, line_idx, col - 1, {
-				virt_text = { { rand_char, "Normal" } },
+				virt_text = { { rand_char, "" } },
 				virt_text_pos = "overlay",
 				hl_mode = "combine",
 			})
