@@ -19,14 +19,18 @@
 
 ## Usage
 
-To toggle on and off obfuscation, use command `:ToggleObfuscate`
+To toggle on and off obfuscation, use `lua require('obfuscate').toggle()`
+Or bind it for easier access
 
 Example keybinding:
 ```lua
-vim.api.nvim_set_keymap(
-	"n",
-	"<C-t>",
-	"<cmd>ToggleObfuscate<CR>",
-	{ desc = "Toggle Obfuscate", noremap = true, silent = true }
+vim.keymap.set(
+  "n",
+  "<C-t>",
+  require('obfuscate').toggle,
+  { desc = "Toggle Obfuscate", noremap = true, silent = true }
 )
 ```
+
+## TODO
+- [ ] Implement user command to toggle obfuscation
